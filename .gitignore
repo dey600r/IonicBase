@@ -32,7 +32,9 @@ package-lock.json
 /app/platforms
 /app/plugins
 /app/www
-/app/resources
+/app/resources/android
+/app/resources/ios
+/app/resources/windows
 /app/build.json
 /app/build-demo.json
 /utils/versions
