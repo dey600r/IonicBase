@@ -1,18 +1,25 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+// PAGES
 import { TabsPage } from './tabs.page';
+
+// LIBRARIES
+import { TranslateService } from '@ngx-translate/core';
+
+// CONFIGURATIONS
+import { SetupTest, SpyMockConfig } from '@testing/index';
 
 describe('TabsPage', () => {
   let component: TabsPage;
   let fixture: ComponentFixture<TabsPage>;
+  let translate: TranslateService;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule(SetupTest.config).compileComponents();
+
+    translate = TestBed.inject(TranslateService);
+    await translate.use('es').toPromise();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TabsPage);
