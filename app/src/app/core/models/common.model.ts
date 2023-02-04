@@ -13,7 +13,7 @@ export class ModalInputModel<T = any, R = any> {
     dataList: any[];
     parentPage: PageEnum;
     action: string;
-    constructor(create: boolean = true, d: T = null, dl: R[] = [], parentPage: PageEnum = PageEnum.HOME,
+    constructor(create: boolean = true, d: T, dl: R[] = [], parentPage: PageEnum = PageEnum.HOME,
                 act: string = '') {
         this.isCreate = create;
         this.data = d;
@@ -27,7 +27,7 @@ export class ModalOutputModel<T = any, R = any> {
     action: ModalOutputEnum;
     data: T;
     dataList: R[];
-    constructor(a: ModalOutputEnum = ModalOutputEnum.SAVE, d: T = null, dl: R[] = []) {
+    constructor(a: ModalOutputEnum = ModalOutputEnum.SAVE, d: T, dl: R[] = []) {
         this.action = a;
         this.data = d;
         this.dataList = dl;

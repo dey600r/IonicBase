@@ -3,8 +3,6 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 // PLUGINS
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -19,8 +17,6 @@ describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   let platform: Platform;
-  let statusBar: StatusBar;
-  let splashScreen: SplashScreen;
   let translate: TranslateService;
 
   beforeEach(async () => {
@@ -33,8 +29,6 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     platform = TestBed.inject(Platform);
-    statusBar = TestBed.inject(StatusBar);
-    splashScreen = TestBed.inject(SplashScreen);
     fixture.detectChanges();
   });
 
@@ -49,8 +43,6 @@ describe('AppComponent', () => {
     await platform.ready();
     fixture.whenStable().then(() => {
       expect(platform.ready).toHaveBeenCalled();
-      expect(statusBar.styleBlackTranslucent).toHaveBeenCalled();
-      expect(splashScreen.hide).toHaveBeenCalled();
     });
   });
 

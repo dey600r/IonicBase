@@ -9,8 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 // LIBRARIES IONIC
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 // LIBRARIES ANGULAR
 import { TranslateModule, TranslateLoader, TranslateStore } from '@ngx-translate/core';
@@ -47,8 +45,6 @@ import { AppComponent } from './app.component';
   exports: [
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
     TranslateStore,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
